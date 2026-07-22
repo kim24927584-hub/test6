@@ -7,8 +7,60 @@
   <style>
     *{margin: 0; padding: 0;}
     .box1{
-      border: solid 1px;
+      /* border: solid 1px; */
+      width: 300px;
+      text-align: center;
+      display: inline-block;
     }
+    .price{
+      margin-top: 10px;
+    }
+    .price-text{
+      
+    }
+    .before{
+      font-size: 14px;
+      color: gray;
+      text-decoration: line-through;
+      margin-right: 5px;
+    }
+    .after{
+      font-size: 19px;
+      color: red;
+    }
+    .event{
+      margin-top: 7px;
+    }
+    .event-text{
+      font-size: 14px;
+      
+      color: white;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 2px;
+      border-radius: 50px;
+      
+    }
+    .discount{
+      background-color: rgb(248, 67, 67);
+    }
+    .today-deli{
+      background-color: rgb(226, 124, 192);
+    }
+    .opo{
+      background-color: rgb(255, 142, 12);
+    }
+    .cupon{
+      background-color: rgb(135, 201, 37);
+    }
+    .presentation{
+      background-color: rgb(11, 223, 223);
+    }
+    h4{
+      color: rgb(117, 115, 115);
+      margin-bottom: 10px;
+    }
+
   </style>
 </head>
 <body>
@@ -19,7 +71,55 @@
       [노세범/뽀송앞머리] 나르카 프레시 <br>
       세범 헤어 마스카라 (단품/기획)
     </p>
-    <p>18,000원~ 16,200원~</p>
+    <p class="price"><span class="price-text before">18,000원~ </span> <span class="price-text after">16,200원~</span></p>
+    <p class="event">
+      <span class="event-text discount">세일</span>
+      <span class="event-text today-deli">오늘드림</span>
+    </p>
+  </div>
+  <div class="box1">
+    <img src="images/prod2.jpg" alt=""><br>
+    <h4>디어스킨</h4>
+    <p>
+      디어스킨 리얼모달 생리대 7종 택 <br>
+      1(패드 / 라이너 / 슈퍼롱 / 입는오버)
+    </p>
+    <p class="price"><span class="price-text before">6,400원~ </span> <span class="price-text after">5,760원~</span></p>
+    <p class="event">
+      <span class="event-text opo">1 + 1</span>
+      <span class="event-text cupon">쿠폰</span>
+      <span class="event-text today-deli">오늘드림</span>
+    </p>
+  </div>
+  <div class="box1">
+    <img src="images/prod3.jpg" alt=""><br>
+    <h4>좋은느낌</h4>
+    <p>
+      2026 좋은느낌 썸머 입는오버나이트<br> M/L 4P
+
+    </p>
+    <p class="price"><span class="price-text before">9,000원~ </span> <span class="price-text after">7,200원~</span></p>
+    <p class="event">
+      <span class="event-text opo">1 + 1</span>
+      <span class="event-text cupon">쿠폰</span>
+      <span class="event-text today-deli">오늘드림</span>
+      <span class="event-text presentation">증정</span>
+    </p>
+  </div>
+  <div class="box1">
+    <img src="images/prod4.jpg" alt=""><br>
+    <h4>좋은느낌</h4>
+    <p>
+      2026 좋은느낌 썸머 입는오버나이트<br> M/L 4P
+
+    </p>
+    <p class="price"><span class="price-text before">9,000원~ </span> <span class="price-text after">7,200원~</span></p>
+    <p class="event">
+      <span class="event-text opo">1 + 1</span>
+      <span class="event-text cupon">쿠폰</span>
+      <span class="event-text today-deli">오늘드림</span>
+      <span class="event-text presentation">증정</span>
+    </p>
   </div>
 </body>
 </html>
