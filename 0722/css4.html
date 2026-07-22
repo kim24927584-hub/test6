@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul, li{
+      /* 블릿 제거 */
+      list-style: none;
+    }
+    .menu{
+      color: red;
+      font-weight: bold;
+    }
+    .box1 p:nth-child(1){color: red;}
+    .box1 p:nth-child(2){color: aqua;}
+    form input[type=text]{border: solid blue;}
+    img[alt="강쥐2"]{border: solid blue;}
+  </style>
+</head>
+<body>
+  <!-- 블릿 제거, .menu 글자색 빨간색, 글자 굵게 -->
+   <ul>
+    <li class="menu">홈</li>
+    <li class="menu">소개</li>
+    <li>공지사항</li>
+   </ul>
+
+   <div class="box1">
+    <p>문장1</p>
+    <p>문장2</p>
+   </div>
+
+   <form action="">
+    <input type="text" placeholder="아이디">
+    <input type="password" placeholder="비밀번호">
+    <input type="submit" value="로그인">
+   </form>
+<hr>
+   <img src="images/dog1.jpg" width="200" alt="">
+   <img src="images/dog2.jpg" width="200" alt="강쥐2">
+   <img src="images/dog3.jpg" width="200" alt="">
+</body>
+</html>
