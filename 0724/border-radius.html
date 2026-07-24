@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .round1{
+      border-radius: 50%;
+    }
+    .box{
+      width: 300px;
+      height: 300px;
+      border: 1px solid;
+      margin-top: 50px;
+    }
+    .box1{
+      border-radius: 50%;
+    }
+    .box2{border-radius: 150px;}
+    .box3{border-radius: 25px 50px 25px 0;}
+    .box4{
+      width: auto;height: auto;
+      display: inline-block;
+      padding: 5px 20px;
+      border-radius: 20px;
+      background-color: pink;
+      cursor: pointer;
+    }
+    .box4:hover{
+      background-color: hotpink;
+      color: #fff;
+    }
+    .box5{
+      background-image: url(images/cat2.jpg);
+      background-position: 50% 50%;
+      background-size: cover;
+      border-radius: 50%;
+      box-shadow: 5px 5px 10px #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="box box5">원5</div>
+  <div class="box box4">원4</div>
+  <div class="box box3">원3</div>
+  <img src="images/cat1.jpg" alt="">
+  <img src="images/cat2.jpg" alt="" class="round1">
+  <div class="box box1">원1</div>
+  <div class="box box2">원2</div>
+  <div class="box box6">원6</div>
+</body>
+</html>
