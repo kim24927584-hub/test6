@@ -1,7 +1,6 @@
 package a0724;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
+
 import java.util.Scanner;
 
 public class for2 {

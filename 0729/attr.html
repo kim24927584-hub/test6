@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 특정 속성이 있는 요소 */
+[type] {
+    border: 1px solid #ccc;
+}
+
+/* 속성 값이 정확히 일치 */
+[type="text"] {
+    background-color: #f0f0f0;
+}
+
+/* 속성 값이 포함 */
+[href*="example"] {
+    color: rgb(21, 21, 44);
+}
+  </style>
+</head>
+<body>
+  <form action="">
+    <input type="text">
+    <input type="email">
+    <a href="https://example.com">링크</a>
+  </form>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      height: 3000px;
+    }
+    .box{
+      width: 150px;
+      height: 150px;
+      border: solid 1px;
+    }
+    .box1{
+      background-color: antiquewhite;
+    }
+    .box2{
+      background-color: rgb(68, 150, 88);
+    }
+    .box3{
+      position: fixed;
+      right: 50px;
+      bottom: 50px;
+      
+      background-color: rgb(53, 42, 28);
+    }
+    .box4{
+      background-color: rgb(91, 209, 75);
+    }
+    /*
+    relative
+    1. absolute 부모역할
+    2. 기준 위치가 원래 있던 위치
+    3. 자리값이 있음
+    4. 겹치는 속성
+    5. left top 값으로 이동 가능(보통 쓰지 않음)
+
+    absolute
+    1. relative 자식 역할
+    2. 부모 (화면전체, relative준 부모)
+    3. 자리값 없음.
+    4. 겹침
+    5. left top right bottom
+
+    fixed
+    1. 
+    2. 스크롤 내려도 항상 같은 위치에 고정
+    3. 자리값 없다.
+    4. 겹치는 속성
+    5. left top right bottom
+    */
+  </style>
+</head>
+<body>
+  <div class="box box1">박스1</div>
+  <div class="box box2">박스2</div>
+  <div class="box box3">박스3</div>
+  <div class="box box4">박스4</div>
+</body>
+</html>
