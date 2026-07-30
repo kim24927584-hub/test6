@@ -1,0 +1,122 @@
+*{margin: 0;padding: 0;}
+.bigbox{
+  width: 1000px;
+  margin: 100px auto 0;
+  border: 5px solid tan;
+  overflow: hidden;
+  padding: 20px 0;
+}
+.bigbox h2{
+  padding-bottom: 20px;
+  text-align: center;
+}
+.box{
+  width: 200px;
+  height: 150px;
+  border: 2px solid tan;
+  float: left;
+  margin-left: 35px;
+  position: relative;
+}
+.box img{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.box1 img{
+  transform: rotate(0deg);
+  transition: all 0.5s;
+}
+.box1:hover img{
+  transform: rotate(360deg);
+}
+.box2 img{
+  transform: rotate(0deg);
+  transform-origin: left top;
+  transition: all 0.5s;
+}
+.box2:hover img{
+  transform: rotate(360deg);
+}
+.box3{perspective: 150px;}
+.box3 img{
+  transform: rotateY(0deg);
+  transform-origin: left top;
+  transition: all 1s;
+}
+.box3:hover img{
+  transform: rotateY(360deg);
+}
+
+.abox1{}
+.abox1 img{
+  transform: scale(1);
+  transition: all 0.5s;
+}
+.abox1:hover img{
+  transform: scale(1.5);
+}
+.abox2{
+  background: url(../images/women2.jpg) no-repeat 50% 50%;
+  background-size: 100%;
+  transition: all 0.5s;
+}
+.abox2:hover{background-size: 130%;}
+.abox3::after{
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  /*1번 방법*/
+  background-color: rgba(0,0,0,0.5); 
+  /*2번 방법*/
+  /* background-color: rgba(0,0,0,0.5); 
+  transform: scale(0); */
+/*3번 방법*/
+  /* background-color: rgba(0,0,0,0.5); 
+  transform: scale(0,1);
+  transform-origin: left top; */
+
+  transition: all 0.3s;
+}
+.abox3:hover::after{
+  /*1번 방법*/
+  /* background-color: rgba(0,0,0,0); */
+  /*2번 방법*/
+  /* transform: scale(1); */
+  /*3번 방법*/
+  /* transform:scale(1,1) */
+  width: 100%;
+}
+.abox4::before{
+  position:absolute;
+  content: "";
+  width: 100%;height: 0%;
+  left: 0;top: 0;
+  background-color: rgba(0,0,0,0.5);
+  transition: all 0.3s;
+  
+}
+.abox4:hover::before{
+  height: 100%;
+}
+.txt{
+  position: absolute;
+
+  height: 50%;width: 100%;
+  top: 20%;
+  left: 0%;
+  z-index: 5;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+
+  opacity: 0;
+  transition: all 0.3s;
+
+}
+.abox4:hover .txt{
+  opacity: 1;
+}
