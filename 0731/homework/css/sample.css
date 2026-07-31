@@ -1,0 +1,32 @@
+*{margin: 0;padding: 0;}
+body{
+  
+}
+.section1{
+  width: 1146px;height: 250px;
+  border: 1px solid;
+  margin: 0 auto ;
+}
+.bigbox {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin-top: 10px;
+}
+.bigbox li div{
+  border: 1px solid;
+  width: 300px;height: 180px;
+  background-color: antiquewhite;
+  padding: 13px 30px;
+}
+.txt1{
+  width: 80px;height: 30px;
+  background-color: royalblue;
+  color: white;
+  border: solid 1px;
+  text-align: center;
+}
+.txt2{
+  font-size: 15px;
+  padding: 12px 0;
+}

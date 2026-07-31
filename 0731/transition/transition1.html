@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 100px;
+      height: 100px;
+      background-color: tomato;
+      /* transition: width 1s, background-color 1s; */
+      transition: all 1s;
+      /*transition은 css 속성이 바뀔 때 모션을 부드럽게 하는 기능*/
+    }
+    .box:hover{
+      width: 300px;
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>
+<!-- animation 자동실행가능, @keyframe, 여러 단계 가능, infinite 반복 가능, 복잡한 움직임 -->
+<!-- transition 상태가 변경될 때, :hover와 사용, 시작-끝, 반복기능이 없음, 움직임도 간단함-->
