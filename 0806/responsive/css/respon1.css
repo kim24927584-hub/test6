@@ -1,0 +1,72 @@
+*{margin: 0;padding: 0;}
+body{
+  background-color: #f5f5f5;
+}
+.site-header{
+  background-color: #3f51b5;
+  color: white;
+  padding: 16px;
+  text-align: center;
+}
+.site-main{
+  padding: 16px;
+}
+.card-section{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.section-title{
+  margin-bottom: 16px;
+  font-size: 20px;
+  text-align: center;
+}
+/* 카드리스트 - 모바일에서는 1열 세로 */
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.card{
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.card-title{
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 18px;
+
+}
+.card-content {
+  margin: 0;
+  font-size: 14px;
+  color: #555555;
+}
+/* 1단계 - 화면이 768 이상일 때  - > 2열배치 */
+@media (min-width:768px){
+  .card-list{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .card{
+    flex: 1 1 calc(50% - 8px);
+  }
+  /* 16px 2열로 배치될경우 16 -> 8로 수정 */
+  /* 1 -> flex-grow - 남은 공간이 있으면 늘어남 - 같은 비율*/
+  /* 1 -> flex-shrink - 남은 공간 있으면 줄어듦 - 같은 비율*/
+  /* calc(33.333% - 16px ) -> flex-basis*/
+}
+@media (min-width:1024px){
+  .card-list{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .card{
+    flex: 1 1 calc(33.333% - 5px);
+  }
+  /* 16px 2열로 배치될경우 16 -> 8로 수정 */
+  /* 1 -> flex-grow - 남은 공간이 있으면 늘어남 - 같은 비율*/
+  /* 1 -> flex-shrink - 남은 공간 있으면 줄어듦 - 같은 비율*/
+  /* calc(33.333% - 16px ) -> flex-basis*/
+}
