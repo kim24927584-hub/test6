@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .p1+h1{display: none; transition:all 1s;}
+    .p1:hover+h1{display: block;}
+    .p2+h1{visibility: hidden; transition: all 1s;}
+    .p2:hover+h1{visibility: visible;}
+  </style>
+</head>
+<body>
+  <p class="p1">디스플레이 넌 블록</p>
+  <h1>이 글이 자연스럽게 보이나요</h1>
+
+  <p class="p2">디스플레이 넌 블록</p>
+  <h1>이 글이 자연스럽게 보이나요</h1>
+</body>
+</html>

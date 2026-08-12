@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Flexbox 실전 레이아웃 예제">
+    <title>Flexbox 실전 레이아웃 예제</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+        
+        .example-section {
+            margin: 40px 20px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin: 30px 0;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        code {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            display: block;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        
+        /* 헤더 레이아웃 */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* 카드 행 레이아웃 */
+        .card-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .card {
+            flex: 1 1 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 25px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        
+        .card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .card p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        /* 푸터 레이아웃 */
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 40px;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .footer-section {
+            flex: 1 1 250px;
+            min-width: 200px;
+        }
+        
+        .footer-section h3 {
+            color: #3498db;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-section a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: #3498db;
+        }
+        
+        /* 중앙 정렬 */
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 10px;
+            color: white;
+        }
+        
+        .center-content {
+            text-align: center;
+        }
+        
+        .center-content h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            border: none;
+        }
+        
+        /* 스티키 푸터 */
+        .sticky-footer-body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .sticky-footer-main {
+            flex: 1;
+            padding: 30px;
+            background-color: #ecf0f1;
+        }
+        
+        .sticky-footer-footer {
+            flex: 0 0 auto;
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flexbox 실전 레이아웃 예제</h1>
+
+    <div class="example-section">
+        <h2>1. 헤더 레이아웃</h2>
+        <p>로고, 네비게이션, 사용자 정보를 한 줄에 배치합니다.</p>
+        
+        <header class="header">
+            <div class="logo">로고</div>
+            <nav class="nav">
+                <a href="#">홈</a>
+                <a href="#">소개</a>
+                <a href="#">서비스</a>
+                <a href="#">연락처</a>
+            </nav>
+            <div class="user">
+                <div class="user-avatar">👤</div>
+                <span>사용자</span>
+            </div>
+        </header>
+        
+        <code>/* 헤더 레이아웃 */
+.header {
+    display: flex;
+    justify-content: space-between;  /* 양끝 정렬 */
+    align-items: center;             /* 세로 중앙 정렬 */
+    padding: 20px 30px;
+}
+
+.logo {
+    flex: 0 0 auto;  /* 고정 크기 */
+}
+
+.nav {
+    display: flex;
+    gap: 20px;  /* 메뉴 간격 */
+}
+
+.user {
+    flex: 0 0 auto;  /* 고정 크기 */
+}</code>
+    </div>
+
+    <div class="example-section">
+        <h2>2. 카드 행 레이아웃</h2>
+        <p>반응형 카드 그리드를 만듭니다. 화면 크기에 따라 자동으로 줄바꿈됩니다.</p>
+        
+        <div class="card-row">
+            <div class="card">
+                <h3>카드 1</h3>
+                <p>
+                    이것은 Flexbox를 사용한 카드입니다. 
+                    flex: 1 1 300px로 설정하여 최소 300px 크기를 유지하면서 
+                    균등하게 분배됩니다.
+                </p>
+            </div>
+            <div class="card">
+                <h3>카드 2</h3>
+                <p>
+                    화면이 작아지면 자동으로 줄바꿈됩니다. 
+                    flex-wrap: wrap과 함께 사용하면 
+                    완벽한 반응형 레이아웃을 만들 수 있습니다.
+                </p>
+            </div>
+            <div class="card">
+                <h3>카드 3</h3>
+                <p>
+                    gap 속성을 사용하여 카드 사이의 간격을 
+                    쉽게 조절할 수 있습니다. 
+                    margin보다 훨씬 간편합니다.
+                </p>
+            </div>
+        </div>
+        
+        <code>/* 카드 행 레이아웃 */
+.card-row {
+    display: flex;
+    gap: 20px;           /* 카드 간격 */
+    flex-wrap: wrap;     /* 줄바꿈 허용 */
+}
+
+.card {
+    flex: 1 1 300px;     /* 최소 300px, 균등 분배 */
+    min-width: 0;        /* flex-basis보다 작아질 수 있음 */
+}</code>
+        
+        <div class="highlight">
+            <strong>설명:</strong>
+            <ul>
+                <li><code>flex: 1 1 300px</code>: grow=1, shrink=1, basis=300px</li>
+                <li>최소 300px 크기를 유지하면서 남은 공간을 균등 분배</li>
+                <li>화면이 작아지면 자동으로 줄바꿈</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example-section">
+        <h2>3. 푸터 레이아웃</h2>
+        <p>여러 섹션을 가로로 배치하는 푸터입니다.</p>
+        
+        <footer class="footer">
+            <div class="footer-section">
+                <h3>회사 정보</h3>
+                <p>주소: 서울시 강남구</p>
+                <p>전화: 02-1234-5678</p>
+                <p>이메일: info@example.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>빠른 링크</h3>
+                <ul>
+                    <li><a href="#">홈</a></li>
+                    <li><a href="#">소개</a></li>
+                    <li><a href="#">서비스</a></li>
+                    <li><a href="#">연락처</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>SNS</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </footer>
+        
+        <code>/* 푸터 레이아웃 */
+.footer {
+    display: flex;
+    justify-content: space-around;  /* 균등 분배 */
+    flex-wrap: wrap;                 /* 줄바꿈 허용 */
+    gap: 30px;                       /* 섹션 간격 */
+}
+
+.footer-section {
+    flex: 1 1 250px;  /* 최소 250px, 균등 분배 */
+    min-width: 200px;
+}</code>
+    </div>
+
+    <div class="example-section">
+        <h2>4. 중앙 정렬</h2>
+        <p>요소를 화면 정중앙에 배치합니다.</p>
+        
+        <div class="center-container">
+            <div class="center-content">
+                <h2>중앙 정렬된 콘텐츠</h2>
+                <p>이 콘텐츠는 Flexbox를 사용하여 완벽하게 중앙에 배치되었습니다.</p>
+            </div>
+        </div>
+        
+        <code>/* 완벽한 중앙 정렬 */
+.center-container {
+    display: flex;
+    justify-content: center;  /* 주축 중앙 */
+    align-items: center;      /* 교차축 중앙 */
+    min-height: 300px;        /* 최소 높이 */
+}
+
+/* 전체 화면 중앙 정렬 */
+.fullscreen-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;  /* 전체 화면 높이 */
+}</code>
+    </div>
+
+    <div class="example-section">
+        <h2>5. 스티키 푸터 (Sticky Footer)</h2>
+        <p>콘텐츠가 적어도 푸터가 항상 화면 하단에 위치합니다.</p>
+        
+        <div class="sticky-footer-body">
+            <main class="sticky-footer-main">
+                <h3>메인 콘텐츠</h3>
+                <p>이 영역은 flex: 1로 설정되어 남은 공간을 모두 차지합니다.</p>
+                <p>콘텐츠가 적어도 푸터는 항상 화면 하단에 위치합니다.</p>
+            </main>
+            <footer class="sticky-footer-footer">
+                <p>&copy; 2024 스티키 푸터 예제. All rights reserved.</p>
+            </footer>
+        </div>
+        
+        <code>/* 스티키 푸터 */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;  /* 남은 공간 모두 차지 */
+}
+
+footer {
+    flex: 0 0 auto;  /* 고정 크기 */
+}</code>
+    </div>
+
+    <div class="example-section">
+        <h2>6. 실전 조합 예제</h2>
+        <p>여러 Flexbox 기법을 조합한 완성된 레이아웃입니다.</p>
+        
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <div style="flex: 0 0 250px; background-color: #e3f2fd; padding: 20px; border-radius: 8px;">
+                <h3 style="color: #1976d2; margin-bottom: 15px;">사이드바</h3>
+                <p>고정 크기 사이드바 (flex: 0 0 250px)</p>
+            </div>
+            <div style="flex: 1; min-width: 300px; background-color: #fff3cd; padding: 20px; border-radius: 8px;">
+                <h3 style="color: #f57c00; margin-bottom: 15px;">메인 콘텐츠</h3>
+                <p>유연한 메인 콘텐츠 영역 (flex: 1)</p>
+                <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
+                    <div style="flex: 1 1 200px; background-color: white; padding: 15px; border-radius: 5px;">
+                        <strong>카드 1</strong>
+                    </div>
+                    <div style="flex: 1 1 200px; background-color: white; padding: 15px; border-radius: 5px;">
+                        <strong>카드 2</strong>
+                    </div>
+                    <div style="flex: 1 1 200px; background-color: white; padding: 15px; border-radius: 5px;">
+                        <strong>카드 3</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <code>/* 실전 조합 */
+.container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.sidebar {
+    flex: 0 0 250px;  /* 고정 크기 */
+}
+
+.main {
+    flex: 1;  /* 유연한 크기 */
+    min-width: 300px;
+}
+
+.card-grid {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1 1 200px;  /* 반응형 카드 */
+}</code>
+    </div>
+</body>
+</html>
+

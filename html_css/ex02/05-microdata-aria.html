@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="마이크로데이터 및 ARIA 예제">
+    <title>마이크로데이터 및 ARIA 예제</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        section {
+            margin: 30px 0;
+            padding: 25px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .example-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            display: block;
+            padding: 10px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .note {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .warning {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .success {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        [role="button"] {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        [role="button"]:hover {
+            background-color: #2980b9;
+        }
+        [aria-invalid="true"] {
+            border: 2px solid #e74c3c;
+        }
+        [aria-live] {
+            padding: 10px;
+            background-color: #ecf0f1;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>마이크로데이터 및 ARIA 예제</h1>
+
+    <section>
+        <h2>1. 마이크로데이터 (Microdata) 기본</h2>
+        <p>마이크로데이터는 HTML 요소에 구조화된 데이터를 추가하는 방법입니다.</p>
+        
+        <div class="example-box">
+            <h3>Person (사람) 예제</h3>
+            <div itemscope itemtype="https://schema.org/Person">
+                <h4 itemprop="name">홍길동</h4>
+                <p>직업: <span itemprop="jobTitle">웹 개발자</span></p>
+                <p>이메일: <a itemprop="email" href="mailto:hong@example.com">hong@example.com</a></p>
+                <p>웹사이트: <a itemprop="url" href="https://example.com">https://example.com</a></p>
+            </div>
+        </div>
+
+        <h3>코드 예시</h3>
+        <code>&lt;div itemscope itemtype="https://schema.org/Person"&gt;
+  &lt;h4 itemprop="name"&gt;홍길동&lt;/h4&gt;
+  &lt;p&gt;직업: &lt;span itemprop="jobTitle"&gt;웹 개발자&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;이메일: &lt;a itemprop="email" href="mailto:hong@example.com"&gt;hong@example.com&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</code>
+
+        <div class="note">
+            <strong>속성 설명:</strong>
+            <ul>
+                <li><code>itemscope</code>: 마이크로데이터 항목의 시작</li>
+                <li><code>itemtype</code>: 데이터 타입 (Schema.org URL)</li>
+                <li><code>itemprop</code>: 속성 이름</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>2. 마이크로데이터: Organization (조직)</h2>
+        
+        <div class="example-box">
+            <div itemscope itemtype="https://schema.org/Organization">
+                <h3 itemprop="name">웹 개발 회사</h3>
+                <p>주소: <span itemprop="address">서울시 강남구 테헤란로 123</span></p>
+                <p>전화: <span itemprop="telephone">02-1234-5678</span></p>
+            </div>
+        </div>
+
+        <h3>코드 예시</h3>
+        <code>&lt;div itemscope itemtype="https://schema.org/Organization"&gt;
+  &lt;h3 itemprop="name"&gt;웹 개발 회사&lt;/h3&gt;
+  &lt;p&gt;주소: &lt;span itemprop="address"&gt;서울시 강남구&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;</code>
+    </section>
+
+    <section>
+        <h2>3. 마이크로데이터: Article (기사)</h2>
+        
+        <div class="example-box">
+            <article itemscope itemtype="https://schema.org/Article">
+                <h2 itemprop="headline">HTML 기초 강의</h2>
+                <p itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    작성자: <span itemprop="name">김개발</span>
+                </p>
+                <time itemprop="datePublished" datetime="2024-12-10">2024년 12월 10일</time>
+                <p itemprop="description">HTML의 기본 구조와 시맨틱 태그에 대해 알아봅니다.</p>
+            </article>
+        </div>
+
+        <h3>코드 예시</h3>
+        <code>&lt;article itemscope itemtype="https://schema.org/Article"&gt;
+  &lt;h2 itemprop="headline"&gt;기사 제목&lt;/h2&gt;
+  &lt;p itemprop="author" itemscope itemtype="https://schema.org/Person"&gt;
+    작성자: &lt;span itemprop="name"&gt;작성자명&lt;/span&gt;
+  &lt;/p&gt;
+  &lt;time itemprop="datePublished" datetime="2024-12-10"&gt;2024년 12월 10일&lt;/time&gt;
+&lt;/article&gt;</code>
+
+        <div class="success">
+            <strong>장점:</strong> 마이크로데이터를 사용하면 검색 엔진이 콘텐츠를 더 잘 이해하고, 
+            검색 결과에 리치 스니펫(추가 정보)을 표시할 수 있습니다.
+        </div>
+    </section>
+
+    <section>
+        <h2>4. ARIA 기본: role 속성</h2>
+        <p>ARIA는 접근성을 향상시키기 위한 속성들입니다. <code>role</code>은 요소의 역할을 명시합니다.</p>
+        
+        <div class="example-box">
+            <h3>버튼 역할</h3>
+            <div role="button" tabindex="0" onclick="alert('클릭됨!')">클릭 가능한 div</div>
+            <p><em>참고: 실제로는 &lt;button&gt; 태그를 사용하는 것이 좋습니다.</em></p>
+        </div>
+
+        <h3>코드 예시</h3>
+        <code>&lt;div role="button" tabindex="0"&gt;클릭 가능한 버튼&lt;/div&gt;</code>
+
+        <div class="warning">
+            <strong>주의:</strong> 시맨틱 HTML 태그가 있으면 그것을 먼저 사용하세요. 
+            ARIA는 보완용입니다. 예를 들어, <code>&lt;button&gt;</code> 태그가 있으면 
+            <code>role="button"</code>을 추가할 필요가 없습니다.
+        </div>
+    </section>
+
+    <section>
+        <h2>5. ARIA: aria-label</h2>
+        <p>요소에 접근 가능한 이름을 제공합니다.</p>
+        
+        <div class="example-box">
+            <h3>아이콘 버튼</h3>
+            <button aria-label="닫기">×</button>
+            <button aria-label="메뉴 열기">☰</button>
+            <button aria-label="검색">🔍</button>
+        </div>
+
+        <h3>코드 예시</h3>
+        <code>&lt;button aria-label="닫기"&gt;×&lt;/button&gt;
+&lt;img src="icon.png" aria-label="홈으로 이동"&gt;</code>
+
+        <div class="note">
+            <strong>사용 시나리오:</strong> 아이콘만 있는 버튼이나 이미지 링크처럼 
+            텍스트가 없어도 스크린 리더가 목적을 이해할 수 있도록 합니다.
+        </div>
+    </section>
+
+    <section>
+        <h2>6. ARIA: aria-labelledby</h2>
+        <p>다른 요소의 ID를 참조하여 레이블을 지정합니다.</p>
+        
+        <div class="example-box">
+            <h3 id="section-title">섹션 제목</h3>
+            <section aria-labelledby="section-title">
+                <p>이 섹션은 위의 제목과 연결되어 있습니다.</p>
+            </section>
+        </div>
+
+        <h3>코드 예시</h3>
+        <code>&lt;h2 id="section-title"&gt;섹션 제목&lt;/h2&gt;
+&lt;section aria-labelledby="section-title"&gt;
+  &lt;!-- 섹션 내용 --&gt;
+&lt;/section&gt;</code>
+    </section>
+
+    <section>
+        <h2>7. ARIA: aria-describedby</h2>
+        <p>요소에 대한 추가 설명을 제공합니다.</p>
+        
+        <div class="example-box">
+            <label for="password-input">비밀번호</label>
+            <input type="password" id="password-input" aria-describedby="password-help">
+            <p id="password-help">비밀번호는 8자 이상, 영문, 숫자, 특수문자를 포함해야 합니다.</p>
+        </div>
+
+        <h3>코드 예시</h3>
+        <code>&lt;input type="password" aria-describedby="password-help"&gt;
+&lt;p id="password-help"&gt;비밀번호는 8자 이상이어야 합니다.&lt;/p&gt;</code>
+    </section>
+
+    <section>
+        <h2>8. ARIA: aria-required와 aria-invalid</h2>
+        <p>폼 필드의 필수 여부와 유효성을 표시합니다.</p>
+        
+        <div class="example-box">
+            <form>
+                <label for="email-field">이메일 <span class="sr-only">(필수)</span></label>
+                <input type="email" id="email-field" 
+                       aria-required="true" 
+                       aria-invalid="false"
+                       aria-describedby="email-error">
+                <span id="email-error" style="display: none; color: #e74c3c;">올바른 이메일 형식이 아닙니다.</span>
+            </form>
+        </div>
+
+        <h3>코드 예시</h3>
+        <code>&lt;input type="email" 
+       aria-required="true" 
+       aria-invalid="true" 
+       aria-describedby="email-error"&gt;
+&lt;span id="email-error"&gt;올바른 이메일 형식이 아닙니다.&lt;/span&gt;</code>
+    </section>
+
+    <section>
+        <h2>9. ARIA: aria-hidden</h2>
+        <p>장식용 요소를 스크린 리더에서 숨깁니다.</p>
+        
+        <div class="example-box">
+            <p>
+                <span aria-hidden="true">※</span>
+                <span class="sr-only">필수 항목</span>
+                이름
+            </p>
+            <p>
+                <span aria-hidden="true">→</span>
+                <span class="sr-only">다음으로 이동</span>
+            </p>
+        </div>
+
+        <h3>코드 예시</h3>
+        <code>&lt;span aria-hidden="true"&gt;※&lt;/span&gt;
+&lt;span class="sr-only"&gt;필수 항목&lt;/span&gt;</code>
+
+        <div class="note">
+            <strong>sr-only 클래스:</strong> 시각적으로는 보이지 않지만 스크린 리더는 읽을 수 있는 
+            텍스트를 만들 때 사용합니다.
+        </div>
+    </section>
+
+    <section>
+        <h2>10. ARIA: aria-live (라이브 영역)</h2>
+        <p>동적으로 변경되는 콘텐츠를 스크린 리더에 알립니다.</p>
+        
+        <div class="example-box">
+            <button onclick="updateLiveRegion()">알림 업데이트</button>
+            <div aria-live="polite" aria-atomic="true" id="live-region">
+                초기 상태
+            </div>
+        </div>
+
+        <h3>코드 예시</h3>
+        <code>&lt;div aria-live="polite" aria-atomic="true"&gt;
+  &lt;!-- 동적으로 변경되는 내용 --&gt;
+&lt;/div&gt;</code>
+
+        <h3>aria-live 값</h3>
+        <ul>
+            <li><code>off</code>: 알림하지 않음 (기본값)</li>
+            <li><code>polite</code>: 현재 작업이 끝난 후 알림</li>
+            <li><code>assertive</code>: 즉시 알림 (중요한 메시지)</li>
+        </ul>
+
+        <script>
+            function updateLiveRegion() {
+                const region = document.getElementById('live-region');
+                const messages = [
+                    '새로운 메시지가 도착했습니다.',
+                    '작업이 완료되었습니다.',
+                    '오류가 발생했습니다.'
+                ];
+                const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                region.textContent = randomMessage;
+            }
+        </script>
+    </section>
+
+    <section>
+        <h2>11. ARIA 사용 가이드라인</h2>
+        <ul>
+            <li>✅ <strong>시맨틱 HTML을 먼저 사용</strong>: ARIA는 보완용</li>
+            <li>✅ <strong>불필요한 ARIA 사용 지양</strong>: 시맨틱 태그로 충분하면 ARIA 불필요</li>
+            <li>✅ <strong>역할 중복 피하기</strong>: <code>&lt;button&gt;</code>에 <code>role="button"</code> 불필요</li>
+            <li>✅ <strong>테스트</strong>: 실제 스크린 리더로 테스트</li>
+            <li>❌ <strong>접근성 향상이 아닌 용도로 사용하지 않기</strong></li>
+        </ul>
+
+        <div class="success">
+            <strong>기억하세요:</strong> ARIA는 접근성을 향상시키는 도구입니다. 
+            올바르게 사용하면 스크린 리더 사용자와 키보드 사용자의 경험을 크게 개선할 수 있습니다.
+        </div>
+    </section>
+
+    <section>
+        <h2>12. 마이크로데이터와 ARIA 비교</h2>
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+            <thead>
+                <tr>
+                    <th style="border: 1px solid #ddd; padding: 10px; background-color: #3498db; color: white;">항목</th>
+                    <th style="border: 1px solid #ddd; padding: 10px; background-color: #3498db; color: white;">마이크로데이터</th>
+                    <th style="border: 1px solid #ddd; padding: 10px; background-color: #3498db; color: white;">ARIA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px;"><strong>목적</strong></td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">검색 엔진을 위한 구조화된 데이터</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">접근성을 위한 보조 기술 지원</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px;"><strong>대상</strong></td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">검색 엔진, 크롤러</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">스크린 리더, 보조 기술</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px;"><strong>주요 속성</strong></td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">itemscope, itemtype, itemprop</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">role, aria-label, aria-describedby 등</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>
+
