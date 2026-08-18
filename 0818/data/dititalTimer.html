@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    var today = new Date();
+    var year = today.getFullYear();
+    var month = today.getMonth()+1;
+    var date = today.getDate();
+    var day = today.getDay();
+
+    console.log(year, month, date, day);
+
+    switch (day) {
+      case 0:
+        console.log("일");
+        break;
+      case 1:
+        console.log("월");
+        break;
+      case 2:
+        console.log("화");
+        break;
+      case 3:
+        console.log("수");
+        break;
+      case 4:
+        console.log("목");
+        break;
+      case 5:
+        console.log("금");
+        break;
+      case 6:
+        console.log("토");
+        break;
+        
+      default:
+        console.log("해당 안됨");
+        break;
+
+      // alert(yo);
+      
+    }
+    
+    var yoil1;
+    if(day===0){
+      yoil1 = "일";
+    }else if(day===1){
+      yoil1 = "월";
+    }
+    else if(day===2){yoil1 = "화"}
+    else if(day===3){yoil1 = "수"}
+
+    let yoil2 = ["일", "월", "화", "수", "목", "금", "토"];
+    let yo = yoil2[day];
+
+    var hour = today.getHours();
+    var min = today.getMinutes();
+    var sec = today.getSeconds();
+    document.write(year+"년 " + month+"월" + date+"일 " + yo + "요일" + hour+"시" + min+"분" + sec+"초");
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

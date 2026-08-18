@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let fruits = ["사과", "바나나", "오랜지"];
+
+    console.log(fruits);
+    console.log(fruits[0]);
+    console.log(fruits[1]);
+    console.log(fruits[2]);
+
+    console.log(fruits.length);
+    fruits[1] = "포도";
+    console.log(fruits);
+
+    fruits.push("딸기");
+    console.log(fruits);
+
+    fruits.unshift("올리브");
+    
+
+    console.log(fruits);
+
+    let item1 = fruits.shift();
+
+    console.log(item1);
+    console.log(fruits);
+
+    console.log("for .. of");
+
+    for(let fruit of fruits){
+      console.log(fruit);
+    }
+
+
+    fruits.forEach(function(item){
+      console.log(item)
+    });
+
+    console.log("forEach 2");
+    fruits.forEach(item => console.log(item));
+
+  </script>
+</body>
+</html>

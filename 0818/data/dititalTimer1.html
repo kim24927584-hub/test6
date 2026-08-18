@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function autoTime(){
+      var today = new Date();
+      var year = today.getFullYear();
+      var month = today.getMonth()+1;
+      var date = today.getDate();
+      var day = today.getDay();
+
+      console.log(year, month, date, day);
+
+
+      let yoil2 = ["일", "월", "화", "수", "목", "금", "토"];
+      let yo = yoil2[day];
+
+      var hour = today.getHours();
+      var min = today.getMinutes();
+      var sec = today.getSeconds();
+      
+
+      document.getElementById("year").innerHTML = year;
+      document.getElementById("month").innerHTML = month;
+      document.getElementById("date").innerHTML = date;
+      document.getElementById("yoil").innerHTML = yo;
+      document.getElementById("hour").innerHTML = hore;
+      document.getElementById("minute").innerHTML = sec;
+      document.getElementById("second").innerHTML = sec;
+    }
+
+    setInterval(autoTime,1000);
+  </script>
+</head>
+<body>
+  <h1 id="clock">
+    <span id="year"></span>년
+    <span id="month"></span>월
+    <span id="date"></span>일
+    <span id="yoil"></span>
+    <span id="hour"></span>시
+    <span id="minute"></span>분
+    <span id="second"></span>초
+  </h1>
+</body>
+</html>
