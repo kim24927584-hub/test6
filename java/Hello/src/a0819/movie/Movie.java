@@ -1,4 +1,4 @@
-package moviee;
+package a0819.movie;
 
 import java.text.DecimalFormat;
 

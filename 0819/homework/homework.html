@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .red{background-color: red;}
+    .green{background-color: green;}
+    .blue{background-color: blue;}
+    
+  </style>
+</head>
+<body>
+  <div id="box" class="red">sadf</div>
+  <b  r>
+  <button id="changeBtn" onclick="change()">텍스트 변경</button>
+  
+  <script>
+    let colorList = ["red", "blue", "green", "yellow"];
+    let index = 0;
+    let change =()=>{
+      if(index == colorList.length) index = 0;
+      document.getElementById("box").classList =colorList[index];
+      index++;
+
+
+    }
+    
+  </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-package 
+package a0819.movie;
 
 import java.util.ArrayList;
 import java.util.Scanner;

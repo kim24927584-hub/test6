@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box{background-color: white;
+      width: 150px;height: 150px;
+      border: 1px solid;
+    }
+    #box.active{background-color: yellowgreen;}
+
+  </style>
+</head>
+<body>
+  <img src="" alt="">
+  <h1 id="title">안녕하세요</h1>
+
+<p class="text">첫 번째 문장</p>
+<p class="text">두 번째 문장</p>
+
+
+<button id="btn">클릭</button>
+<h2>태그선택</h2>
+
+<ul id="list">
+
+</ul>
+<br>
+<button id="btn2">토글</button>
+<div id="box">박스</div>
+<script>
+  let btn = document.querySelector("#btn");
+  console.log(btn)
+  btn.addEventListener("click",function(){
+    alert("클릭됐습니다.")
+  });
+  
+  let li = document.createElement("li");
+  li.innerHTML = "사과";
+  document.getElementById("list").appendChild(li);
+
+  let li1 = document.querySelector("li");
+  li1.remove();
+
+  let btn2 = document.querySelector("#btn2");
+  btn2.addEventListener("click", ()=>{
+    let box = document.querySelector("#box");
+    if(box.classList.contains("active")){
+box.classList.remove("active");      
+    }else{
+box.classList.add("active");
+    }
+  })
+</script>
+</body>
+</html>

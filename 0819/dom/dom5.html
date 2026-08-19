@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="list">
+
+  </ul>
+  <button onclick="addItem()">
+    추가
+  </button>
+  <script>
+    let addItem = ()=>{
+      let li = document.createElement("li");
+      li.innerHTML = "사과";
+      document.querySelector("#list").appendChild(li);
+    }
+  </script>
+</body>
+</html>
