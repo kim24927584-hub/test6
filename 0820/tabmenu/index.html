@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrap{
+      display: flex;
+      flex-direction: column;
+      /* align-items: center; */
+      width: 800px;
+      /* border: solid 1px; */
+      padding: 0 0 0 50px;
+    }
+    .nav button{
+      padding: 10px 20px;
+      border: none;
+      font-size: 14px;
+      border-radius: 5px;
+    }
+    .nav button.active{
+      background-color: rgb(13, 105, 180);
+      color: white;
+    }
+    .contents .box{
+      width: 500px;height: 300px;
+      padding: 0 0 0 20px;
+      margin: 10px 0 0 0;
+      border: 1px solid grey;
+      border-radius: 5px;
+      display: none;
+    }
+    .contents .box.active{
+      display: block;
+    }
+    hr{
+      width: 500px;
+      margin-left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h2>탭 메뉴</h2>
+    <div class="container">
+      <div class="nav">
+        <button id="button1" data-tab="content1" class="active">홈</button>
+        <button id="button2" data-tab="content2">소개</button>
+        <button id="button3" data-tab="content3">연락처</button>  
+      </div>
+      <hr>
+      <div class="contents">
+        <div id="content1" class="box active">
+          <h4>홈</h4>
+          <p>홈페이지 입니다</p>
+        </div>
+        <div id="content2" class="box">
+          <h4>소개</h4>
+          <p>사이트 상세 설명</p>
+        </div>
+        <div id="content3" class="box">
+          <h4>연락처</h4>
+          <p>010-9999-9999</p>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const buttons = document.querySelectorAll(".container .nav button");
+    const contents = document.querySelectorAll(".container .contents .box");
+
+    // console.log(`buttons = ${buttons[0].innerHTML}`);
+    // console.log(`contents = ${contents[0].innerHTML}`);
+
+    buttons.forEach(function(btn){
+      btn.addEventListener("click", function(){
+        buttons.forEach(function(btn){
+          btn.classList.remove("active");
+        })
+        
+        let btnNum = btn.getAttribute("id");
+        document.getElementById(`${btnNum}`).classList.add("active");
+
+        contents.forEach(function(ctn){
+          ctn.classList.remove("active");
+        })
+
+        let tabNum = btn.getAttribute("data-tab");
+        document.getElementById(`${tabNum}`).classList.add("active");
+      })
+      
+    })
+  </script>
+</body>
+</html>

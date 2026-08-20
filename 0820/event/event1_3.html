@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+    <input type="text" id="txt1">
+    <input type="text" id="txt2">
+  </form>
+
+  <script>
+    const txt1 = document.getElementById("txt1");
+
+    txt1.addEventListener("input", ()=>{
+      console.log(txt1.value);
+    })
+
+    const txt2 = document.getElementById("txt2");
+
+    txt2.addEventListener("change", ()=>{
+      console.log(txt2.value);
+    })
+  </script>
+</body>
+</html>

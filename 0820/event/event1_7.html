@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="parent">
+    <button id="child">버튼</button>
+  </div>
+
+  <script>
+    const parent = document.getElementById("parent");
+    const child = document.getElementById("child");
+
+    parent.addEventListener("click", ()=>{
+      console.log("부모 클릭");
+    })
+
+    child.addEventListener("click", ()=>{
+      console.log("자식 클릭");
+    })
+    
+  </script>
+</body>
+</html>

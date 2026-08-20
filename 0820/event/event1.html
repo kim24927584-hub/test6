@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box">마우스를 올려보세요</div>
+
+  <script>
+    const box = document.getElementById("box");
+    box.addEventListener("mouseover", ()=>{
+      box.style.background  = "yellow"
+    });
+    box.addEventListener("mouseout", ()=>{
+      box.style.background  = "white"
+    });
+  </script>
+</body>
+</html>
