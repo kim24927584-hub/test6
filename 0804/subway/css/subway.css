@@ -347,6 +347,32 @@ padding: 33px 0 ;
   border-radius: 0 30px 0 30px;
   position: relative;
 }
+.banner_sponsor .slider{
+      display: flex;
+      transition: transform 0.5s;
+
+}
+.banner_sponsor .pager{
+  position: absolute;
+  
+  left: 10px;top: 0;
+  
+}
+.banner_sponsor .pager .dot{
+  display: inline-block;
+  width: 10px;height: 10px;
+  margin-left: 5px;
+  border-radius: 5px;
+  background-color: rgb(153, 153, 153);
+  transition: background-color 0.3s ease;
+}
+.banner_sponsor .pager .dot.active{
+  background-color: rgb(117, 255, 38);
+  width: 20px;
+}
+/* .banner_sponsor .slider:hover{
+  transform: translateX(-100%);
+} */
 .s3{
   padding: 50px 0;
   text-align: center; 

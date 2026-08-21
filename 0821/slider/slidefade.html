@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/fade.css">
+  <style>
+    
+    
+  </style>
+</head>
+<body>
+  
+  <div id="slider-container">
+    <div class="slider">
+      <div class="slide on">
+        <img src="img/slide1.jpg" alt="">
+      </div>
+      <div class="slide">
+        <img src="img/slide2.jpg" alt="">
+      </div>
+      <div class="slide">
+        <img src="img/slide3.jpg" alt="">
+      </div>
+    </div>
+    <div class="pager">
+      <span class="dot active" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+  </div>
+</body>
+</html>
+<script>
+ let slideIndex = 1;
+
+ function currentSlide(a){
+  showSlides(slideIndex = a)
+ }
+ function plusSlides(a){
+  showSlides(slideIndex += a)
+ }
+ function showSlides(a){
+  const slides = document.querySelectorAll(".slide");
+  const dots = document.querySelectorAll(".dot");
+  if(a > slides.length){
+    slideIndex=1;
+  }
+  slides.forEach(slide=>slide.classList.remove('on'));
+  dots.forEach(slide=>slide.classList.remove('active'));
+
+  slides[slideIndex-1].classList.add("on");
+  dots[slideIndex-1].classList.add("active");
+ }
+
+ setInterval(plusSlides(1),2000)
+ setInterval(function(){
+  plusSlides(1)
+ }, 2000)
+</script>

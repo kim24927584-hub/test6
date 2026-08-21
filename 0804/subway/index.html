@@ -221,10 +221,24 @@
         </div>
       </div>
       <div class="banner_sponsor">
-        <ul class="banner_bxslider">
-          <li><a href=""><img src="images/1783917682695_Lt69Do.png" alt=""></a></li>
-          <li><a href=""><img src="images/1776303711720_cHFR4i.png" alt=""></a></li>
-        </ul>
+        <div class="slider">
+          <div class="slide">
+            <img src="images/1783917682695_Lt69Do.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="images/1776303711720_cHFR4i.png" alt="">  
+          </div>
+          <div class="slide">
+            <img src="images/.png" alt="">  
+          </div>
+          
+        </div>
+        <div class="pager">
+          <span class="dot active" onclick="currentSlide(0)"></span>
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          
+        </div>
       </div>
     </div>
   </section>
@@ -282,3 +296,34 @@
   </footer>
 </body>
 </html>
+<script>
+  const slider = document.querySelector(".banner_sponsor .slider");
+  const sliders = document.querySelectorAll(".slide");
+  const dots = document.querySelectorAll(".banner_sponsor .pager .dot");
+  let index = 0;
+  function auto(){
+    
+    
+    index++;
+    if(index >= sliders.length){
+      index = 0;
+    }
+    // slider.style.transform = `translateX(${-index * 100}%)`
+    const transformValue = -index * 100 + "%";
+    slider.style.transform = `translateX(${transformValue})`;
+
+    // 버튼 불 들어오는 거 인덱스에 맞게 조절
+    dots.forEach(function(d){
+      d.classList.remove("active");
+    })
+    dots[index].classList.add("active");
+
+  }
+  
+  function currentSlide(a){
+    index = a-1;
+    auto();
+  }
+
+  setInterval(auto,3000)
+</script>
