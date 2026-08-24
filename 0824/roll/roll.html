@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0;padding: 0;}
+    li{
+      list-style: none;
+      float: left;
+      width: 80px;
+    }
+    h1{text-align: center;}
+    #banner_wrap  {
+      width: 260px;
+      height: 120px;
+      padding: 10px 20px;
+      margin: 0 auto;
+      border: 1px solid #aaa;
+    }
+    #banner{
+      width: 800px;
+      height: 54px;
+      border: 1px solid   red ;
+    }
+    #frame{
+      width: 232px;
+      height: 54px;
+      position: relative;
+      margin: 10px auto;
+      border: 1px solid blue;
+      /* overflow: hidden; */
+    }
+  </style>
+</head>
+<body>
+  <h1>롤링 슬라이더 배너 만들기</h1>
+  <div id="banner_wrap">
+    <div id="frame">
+      <ul id="banner">
+        <li><a href=""><img src="images/pic_t1.jpg" alt=""></a></li>
+        <li><a href=""><img src="images/pic_t2.jpg" alt=""></a></li>
+        <li><a href=""><img src="images/pic_t3.jpg" alt=""></a></li>
+        <li><a href=""><img src="images/pic_t4.jpg" alt=""></a></li>
+        <li><a href=""><img src="images/pic_t5.jpg" alt=""></a></li>
+        
+      </ul>
+    </div>
+    <p>
+      <a href="" class="prev"><img src="images/prev_btn.png" alt=""></a>
+      <a href="" class="next"><img src="images/next_btn.png" alt=""></a>
+    </p>
+  </div>
+    
+</body>
+</html>
+<script>
+  let list = document.getElementById("banner");
+  let listLi = document.querySelectorAll("#banner li");
+  let total = listLi.length;
+  let li_width = 80; //li 한개당 넓이 80px
+  let num = 0;
+  for(let i=0;i<3;i++){
+    let copyObj = listLi[i].cloneNode(true);
+    list.append(copyObj)
+  }
+  
+
+  let next = document.querySelector(".next");
+  let prev = document.querySelector(".prev");
+
+  next.addEventListener("click",function(e){
+    e.preventDefault();
+
+    if(num===5 ){
+      num=0;
+      list.style.transition = "none";
+      list.style.marginLeft = 0;  
+    }
+    setTimeout(function(){
+      num++;
+      list.style.transition = "margin-left 0.5s";
+      list.style.marginLeft = -li_width*num + "px";
+    },50)
+    
+  })
+  prev.addEventListener("click",function(e){
+    e.preventDefault();
+
+    if(num===0 ){
+      num=5;
+      list.style.transition = "none";
+      list.style.marginLeft = 0;  
+    }
+    setTimeout(function(){
+      num--;
+      list.style.transition = "margin-left 0.5s";
+      list.style.marginLeft = -li_width*num + "px";
+    },50)
+    
+  })
+  function autoPlay(){
+    if(num===5 ){
+      num=0;
+      list.style.transition = "none";
+      list.style.marginLeft = 0;  
+    }
+    setTimeout(function(){
+      num++;
+      list.style.transition = "margin-left 0.5s";
+      list.style.marginLeft = -li_width*num + "px";
+    },50)
+  }
+  setInterval(autoPlay, 2000)
+</script>
