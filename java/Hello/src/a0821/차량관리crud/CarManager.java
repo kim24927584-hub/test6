@@ -48,7 +48,11 @@ public class CarManager {
         case 6:
           searchByModel();
           break;
+        case 0:
+          System.out.println("프로그램을 종료합니다.");
+          return;
         default:
+          System.out.println("잘못된 선택입니다");
           break;
       }
     }
@@ -57,12 +61,17 @@ public class CarManager {
 
   private void searchByModel() {
     System.out.print("차종 입력: ");
-    String model = sc.nextLine();
-    
+    String keyword = sc.nextLine();
+    boolean found = false;
+
     for(Car c: list){
-      if(c.getModel().equals(model)){
+      if(c.getModel().contains(keyword)){
         System.out.println(c);
+        found = true;
       }
+    }
+    if(!found){
+      System.out.println("검색 결과가 없습니다.");
     }
   }
 
