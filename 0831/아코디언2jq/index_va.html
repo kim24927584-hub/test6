@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Horizontal Accordion</title>
+    <style>
+        * { margin: 0; padding: 0; border: 0; }
+        body { background: #252422; }
+        div { width: 800px; height: 300px; margin: 50px auto; }
+        dl { width: 800px; height: 300px; display: flex; } /* float 대신 flex 사용 권장 */
+
+        /* dt 스타일 */
+        dt { width: 35px; height: 300px; cursor: pointer; }
+        dt span {
+            display: block; width: 100%; height: 100%;
+            text-indent: -9999px;
+        }
+
+        /* dd 스타일: 트랜지션 핵심 */
+        dd {
+            width: 0; /* 기본값 0 */
+            height: 300px;
+            background-color: #d4d0c8;
+            overflow: hidden;
+            transition: width 0.5s ease; /* 너비 애니메이션 */
+        }
+        /* 활성화된 dd의 너비 */
+        dd.active {
+            width: 695px;
+        }
+
+        dd p { width: 655px; padding: 20px; text-indent: 20px; }
+
+        /* 배경 이미지 설정 (기존과 동일) */
+        dt#step1 span { background: url(background-1.jpg) no-repeat 0 0; }
+        dt#step2 span { background: url(background-2.jpg) no-repeat 0 0; }
+        dt#step3 span { background: url(background-3.jpg) no-repeat 0 0; }
+
+        /* Hover 효과: CSS만으로 처리 */
+        dt:hover span { filter: brightness(1.2); /* 예시: 이미지가 없을 때를 대비한 효과 */ }
+        dt#step1:hover span { background-image: url(background-1-over.jpg); }
+        dt#step2:hover span { background-image: url(background-2-over.jpg); }
+        dt#step3:hover span { background-image: url(background-3-over.jpg); }
+
+        /* Selected 효과 */
+        dt#step1 span.selected { background-image: url(background-1-selected.jpg); }
+        dt#step2 span.selected { background-image: url(background-2-selected.jpg); }
+        dt#step3 span.selected { background-image: url(background-3-selected.jpg); }
+    </style>
+</head>
+<body>
+    <div>
+        <dl>
+            <dt id="step1"><span class="selected">Step.1</span></dt>
+            <dd class="active"><p>Lorem ipsum...</p></dd>
+
+            <dt id="step2"><span>Step.2</span></dt>
+            <dd><p>Integer rhoncus...</p></dd>
+
+            <dt id="step3"><span>Step.3</span></dt>
+            <dd><p>Integer pretium...</p></dd>
+        </dl>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dts = document.querySelectorAll('dt');
+            const dds = document.querySelectorAll('dd');
+            const spans = document.querySelectorAll('dt span');
+
+            dts.forEach((dt, index) => {
+                dt.addEventListener('click', () => {
+                    const targetDd = dds[index];
+                    
+                    // 이미 열려있는 상태라면 무시 (선택사항)
+                    if (targetDd.classList.contains('active')) return;
+
+                    // 1. 모든 dd 닫고, 모든 span에서 selected 제거
+                    dds.forEach(dd => dd.classList.remove('active'));
+                    spans.forEach(span => span.classList.remove('selected'));
+
+                    // 2. 클릭한 순번에 해당하는 dd 열고, span에 selected 추가
+                    targetDd.classList.add('active');
+                    dt.querySelector('span').classList.add('selected');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

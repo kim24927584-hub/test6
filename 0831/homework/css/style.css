@@ -1,0 +1,35 @@
+*{margin: 0;padding: 0;}
+.container{
+  width: 500vw;
+}
+nav{
+  position: fixed;
+}
+nav ul li {
+  
+  list-style: none;
+  float: left;
+  background-color: violet;
+  margin: 10px 10px;
+}
+nav ul li.on a{
+  font-weight: bold;
+  color: white;
+  background-color: black;
+}
+.s_Top{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+.section{
+  width: 100vw;
+  height: 100vh;
+  float: left;
+}
+.section1{
+  background-color: red;
+}
+.section2{
+  background-color: blue;
+}
