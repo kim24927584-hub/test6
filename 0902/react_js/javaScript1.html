@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>리엑트에서 사용하는 자바스크립트 1</h1>
+  <h2>버튼 클릭시 count 증가</h2>
+  <h3 id="count">0</h3>
+  <button id="btn">+1증가</button>
+  <button id="btn1">-1감소</button>
+  <script>
+    const countDisplay = document.getElementById("count");
+    const btn = document.getElementById("btn");
+    const btn2 = document.getElementById("btn2");
+
+    btn.addEventListener("click", function(){
+      
+      countDisplay.innerHTML = parseInt(countDisplay.innerHTML)+1;
+    })
+    btn1.addEventListener("click", function(){
+      
+      countDisplay.innerHTML = parseInt(countDisplay.innerHTML)-1;
+    })
+  </script>
+</body>
+</html>

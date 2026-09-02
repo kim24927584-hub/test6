@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>javascript에서 map()이란?</h1>
+  <h3>배열의 각 요소를 하나씩 커내서 원하는 작업을 한 후, <br>
+    그 결과를 ㅐ로운 배열을만들어주는 메서드
+  </h3>
+  <pre>
+    const 새로운배열 = 배열.map(function(요소))
+  </pre>
+  <script>
+    const users = [
+      {name:"홍길동", age:25},
+      {name:"이몽룡", age:25},
+      {name:"성춘향", age:22}
+    ]
+    console.log(users[0].name);
+    console.log(users[0]["name"]);
+
+    const names = users.map((user)=>user.name);
+    console.log(names);
+
+    const newUsers = users.map((user)=>({
+      ...user,
+      
+    }))
+    console.log(newUsers);
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let user1 = {
+      name:"홍길동",
+      address:{
+        city:"서울"
+      }
+    };
+    let user2 = {...user1};
+    user2.name = "김철수";
+    console.log(user1.name);
+
+    user2.address.city = "부산";
+    console.log(user1.address.city);
+
+    let user3 = JSON.parse(JSON.stringify(user1));
+    user3.address.city = "인천";
+
+    console.log(user1.address.city);
+    console.log(user3.address.city);
+  </script>
+</body>
+</html>

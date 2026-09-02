@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-4.0.0.js"></script>
+  <style>
+    form{
+      width: 100px;
+      height: 100px;
+      background-color: black;
+    }
+  </style>
+  <script>
+    $(function(){
+      $("form").on("submit", function(e){
+        e.preventDefault();
+          console.log($("#userid").val());
+      })
+    })
+   
+   
+  </script>
+</head>
+<body>
+  <input type="checkbox" name="" id="all">
+</body>
+</html>
