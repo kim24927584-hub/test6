@@ -3,13 +3,17 @@ $(function(){
     auto: true
   });
   $(".slider-basic").slick({
-  autoplay:true,
-  dots: true,
-  arrows:false,
-  isFinite:true,
-  speed:500,
-  slidesToShow:1,
-  
-})
+    autoplay:true,
+    dots: true,
+    arrows:false,
+    isfinite:true,
+    speed:500,
+    slidesToShow:1,
+
+  })
+  $(".popup .btn").click(function(){
+    $(".popup").css("display", "none");
+  })
+  $(".popup").draggable();
 })
 

@@ -2,14 +2,63 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "Problem4",
+      "request": "launch",
+      "mainClass": "test.problem4.Problem4",
+      "projectName": "minsung3_389daf9e"
+    },
+    {
+      "type": "java",
+      "name": "StringUtil",
+      "request": "launch",
+      "mainClass": "test.problem4.StringUtil",
+      "projectName": "minsung3_389daf9e"
+    },
+    {
+      "type": "java",
+      "name": "Problem3",
+      "request": "launch",
+      "mainClass": "test.problem3.Problem3",
+      "projectName": "minsung3_389daf9e"
+    },
+    {
+      "type": "java",
+      "name": "Problem2",
+      "request": "launch",
+      "mainClass": "test.product.Problem2",
+      "projectName": "minsung3_389daf9e"
+    },
+    {
+      "type": "java",
+      "name": "a",
+      "request": "launch",
+      "mainClass": "a",
+      "projectName": "minsung3_389daf9e"
+    },
+    {
+      "type": "java",
+      "name": "Product",
+      "request": "launch",
+      "mainClass": "Product",
+      "projectName": "minsung3_389daf9e"
+    },
+    {
+      "type": "java",
+      "name": "StudentApp",
+      "request": "launch",
+      "mainClass": "StudentApp",
+      "projectName": "minsung3_389daf9e"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/minsung3/vscodeC/c0828",
-      "program": "c:/minsung3/vscodeC/c0828/build/Debug/outDebug",
+      "cwd": "c:/minsung3/vscodeC/c0902/test",
+      "program": "c:/minsung3/vscodeC/c0902/test/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
