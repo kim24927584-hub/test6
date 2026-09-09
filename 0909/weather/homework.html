@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <script>
+    $(function(){
+      var apiUrl = "http://api.openweathermap.org/data/2.5/weather?id=1835848&appid=696e1afd8847d65af06dc08565ec2ab6&units=metric";
+      $.ajax({
+        url:apiUrl,
+        type:"GET",
+        success:function(res){
+          console.log(res);
+          console.log("현재온도: " + res.main.temp);
+        }
+
+      })
+    })
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

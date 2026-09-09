@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+     <link rel="stylesheet" href="css/style.css">
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script>
+       $(function(){
+         $('.hamburger').click(function(){
+            $(this).toggleClass("is-active");
+            //is-active 클래스를 넣었다 뺏다
+         });
+    });
+</script>
+
+<style>
+
+
+
+
+</style>
+
+
+</head>
+<body>
+    <div class="container">
+        <h1>Hamburger Icon</h1>
+        <div class="row cf">
+            <div class="three col">
+                <div class="hamburger" id="hamburger-1">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

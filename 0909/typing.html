@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+  <h1 id="text">
+    타이핑 효과 시험 이렇게 쳐보세요 타다 타다 타닥!!
+  </h1>
+</body>
+</html>
+<script>
+  let count = 0;
+  let text1 = $("#text");
+  let msg;
+  let comp;
+  let kkk;
+  function main(){
+    msg = text1.text();
+    
+    comp = msg.length;
+    tatata();
+  }
+  main();
+  function tatata(){
+    if(count <= comp){
+      kkk = msg.substring(0,count);
+
+      text1.text(kkk);
+      count++;
+      setTimeout(tatata, 100);
+    }else{
+      count =0;
+      main();
+    }
+  }
+</script>

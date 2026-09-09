@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wheater_ajax</title>
+  <script defer src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" integrity="sha384-vuFJ2JiSdUpXLKGK+tDteQZBqNlMwAjhZ3TvPaDfN9QmbPb7Q8qUpbSNapQev3YF" crossorigin="anonymous"></script>
+  
+  <style>
+    .weather{
+      width: 300px;height: 150px;
+      text-align: center;
+      background-color: cornflowerblue;
+      color: #fff;
+    }
+    .weather > div{
+      float: left;
+      height: 75px;
+      line-height: 75px;
+      width: 50%;
+    }
+    .weather > div.currIcon, .weather > div.currTemp{
+      font-size: 50px;
+    }
+    .weather > div.city{
+      width: 100%;
+      font-size: 23px;
+    }
+  </style>
+  
+</head>
+<body>
+   <h1>weather api</h1>
+    <h2> | 날씨예보</h2>
+    <div class="ctemp">현재 온도: </div>
+    <div class="clowtemp">최저 온도: </div>
+    <div class="chightemp">최고 온도: </div>
+    <div class="cicon">아이콘 :</div>
+</body>
+
+</html>
+<script>
+    
+      let weatherIcon = {
+        "01" : "fas fa-sun",
+        "02" : "fas fa-cloud-sun",
+        "03" : "fas fa-cloud",
+        "04" : "fas fa-cloud-meatball",
+        "09" : "fas fa-cloud-sun-rain",
+        "10" : "fas fa-cloud-showers-heavy",
+        "11" : "fas fa-poo-storm",
+        "13" : "fas fa-snowflake",
+        "50" : "fas fa-smog",
+
+      }
+      var apiUrl = "http://api.openweathermap.org/data/2.5/weather?id=1835848&appid=696e1afd8847d65af06dc08565ec2ab6&units=metric";
+
+      fetch(apiUrl)
+        .then(res => res.json())
+        .then(resp => {
+          console.log("현재 온도" + resp.main.temp)
+          document.querySelector(".ctemp").innerHTML = "현재 온도 : " + resp.main.temp + "℃";
+          document.querySelector(".cicon").innerHTML = 
+            `아이콘 : <i class="${weatherIcon[resp.weather[0].icon.substr(0,2)]}"></i>`;
+        })
+        // .then(response => response.json())
+        // .then(data => console.log(data))
+        .catch(error => console.error('오류:', error));
+
+    
+  </script>
