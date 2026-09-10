@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+<script>
+  $(function(){
+    var onetime = 0;
+    $(window).scroll(function(){
+      var sct = $(window).scrollTop();
+      var off = $("#about").offset().top;
+      if(sct >= off - 300){
+        count2();
+      }
+    })
+    function count2(){
+      if(onetime == 0){
+        $(".skills_box > div").each(function(i){
+          var pnum = $(this).find(".skill_p");
+          var pdata = pnum.text();
+          var chartbg = $(this).find(".skill_bg");
+          $({percent:0}).delay(i*300).animate({percent:pdata},{
+            duration:3000,
+            progress:function(){
+              var now = this.percent;
+              pnum.text(Math.floor(now));
+              chartbg.css("width", now+"%");
+            }
+          })
+        })
+      }
+      onetime = 1;
+      
+    }
+  })
+</script>
+</head>
+
+<body>
+  <div id="wrap">
+        <div class="section" id="main">
+          
+        </div>
+        <div class="section" id="about">
+           <div class="skills_box">
+              <div class="skill">
+                 <div class="skill_n">HTML5</div>
+                 <div class="skill_bg"></div>
+                 <div class="skill_p">85</div>
+              </div>
+              <div class="skill">
+                 <div class="skill_n">CSS3</div>
+                 <div class="skill_bg"></div>
+                 <div class="skill_p">98</div>
+              </div>
+              <div class="skill">
+                 <div class="skill_n">Jquery</div>
+                 <div class="skill_bg"></div>
+                 <div class="skill_p">87</div>
+              </div>
+              <div class="skill">
+                 <div class="skill_n">Photoshop</div>
+                 <div class="skill_bg"></div>
+                 <div class="skill_p">98</div>
+              </div>
+              <div class="skill">
+                 <div class="skill_n">Illustrator</div>
+                 <div class="skill_bg"></div>
+                 <div class="skill_p">100</div>
+              </div>
+           </div>
+        </div>
+     
+    </div>
+</body>
+</html>

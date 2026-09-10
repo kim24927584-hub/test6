@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Document</title>
+  <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+  <script>
+    $(function(){
+      var num = $("#num").text();
+      $({percent:num}).animate({percent:111},{
+        duration:3000,
+        progress:function(){
+          var now = this.percent;
+          $("#num").text(Math.ceil(now));
+        }
+      });
+    })
+  </script>
+</head>
+<body>
+  <h1 id="num">75</h1>
+</body>
+</html>

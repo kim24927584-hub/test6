@@ -1,0 +1,47 @@
+*{margin:0;padding:0;}
+   
+    .section{
+        width:100%;
+        height:100vh;
+    }
+   
+
+   #main{
+      background-color:pink;
+   }
+   #about{
+      background-color:plum;
+      border: 1px solid transparent;
+   }
+
+.skills_box{
+  width: 50%;
+  height: 50%;
+  margin: 20% auto;
+}
+.skill{
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  position: relative;
+  line-height: 40px;
+}
+.skill_n{
+  position: absolute;
+  z-index: 20;
+  left: 20px;
+}
+.skill_bg{
+  position: absolute;
+  width: 0%;
+  height: 40px;
+  background-color: orange;
+  z-index: 10;
+}
+.skill_p{
+  position: absolute;
+  height: 40px;
+  z-index: 20;
+  right: 20px;
+}

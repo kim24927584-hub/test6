@@ -1,0 +1,33 @@
+body{height: 3300px;}
+h1{font-size: 100%;}
+.indicator{
+  position: fixed;right: 10px;
+  top: 10px;
+}
+li{
+  list-style: none;
+  height: 60px;
+  top: 40px;
+  width: 60px;
+  position: fixed;
+}
+#item1{
+  background-color: #000;
+  left: 20px;
+}
+#item2{
+  background-color: #333;
+  left: 100px;
+}
+#item3{
+  background-color: #ff358b;
+  left: 180px;
+}
+#item4{
+  background-color: #01b0f0;
+  left: 260px;
+}
+#item5{
+  background-color: #aeee00;
+  left: 340px;
+}

@@ -1,0 +1,30 @@
+*{margin: 0;padding: 0; list-style: none; text-decoration: none;box-sizing: border-box;}
+.wrap{
+  width: 100%;
+}
+.container{
+  width: 800px;
+  margin: 0 auto;
+}
+ul{
+  border: 1px solid black;
+}
+ul > li{
+  border: 1px solid red;
+}
+ul > li > a{
+  background-color: aliceblue ;
+  width: 100%;
+  display: block;
+  padding: 5px 20px;
+}
+ul > li > div{
+  
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s;
+}
+ul > li.on > div{
+height: 120px;
+}
+ul > li > div > p{padding: 20px;}
