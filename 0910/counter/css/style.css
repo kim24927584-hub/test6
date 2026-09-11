@@ -13,6 +13,12 @@
       background-color:plum;
       border: 1px solid transparent;
    }
+   #port{
+    background-color: tan;
+   }
+   #contact{
+    background-color: aqua;
+   }
 
 .skills_box{
   width: 50%;

@@ -15,7 +15,7 @@ a{text-decoration: none;color:#333;}
   position: relative;
   font-size: 13px;
   z-index: 100;
-  min-width: 1905px;
+  /* min-width: 1905px; */
 }
 .header_top a{color: white;}
 .top_left li{float: left;}
@@ -32,6 +32,9 @@ a{text-decoration: none;color:#333;}
 .top_left li.on a{
   background:#fff;
   color: #484646;
+}
+.top_sns {
+    padding-top: 14px;
 }
 .top_sns li a{
   width: 22px;
@@ -93,7 +96,7 @@ a{text-decoration: none;color:#333;}
   height: 22px;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,50%);
+  transform: translate(-50%,-50%);
 }
 .logo img{
   display: block; width: 100%;
@@ -222,6 +225,20 @@ main{
 
 .bx-wrapper .bx-pager.bx-default-pager a {
   background: white;
+}
+
+/* ----------------------------- 비디오 */
+.section2 {
+    width: 100%;
+    padding: 120px 0;
+    text-align: center;
+}
+
+.section2 video {
+    width: 100%;
+    max-width: 1180px;
+    height: auto;
+    border-radius: 30px;
 }
 
 .section3{
@@ -605,6 +622,7 @@ width:1036px;
   position:absolute;
   z-index: 9999;
   top: 0px;left: 0;
+  display: none;
 }
 .popup .main{
   width: 200px;height: 330px;
@@ -623,4 +641,144 @@ width:1036px;
   z-index: 101;
   top: 0;right: -20px;
   
+}
+
+
+/* --------------------------모바일 네비 화면 가리개 */
+.mobile_bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    z-index: 10;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+}
+
+/* 열렸을 때 */
+.mobile_bg.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* -------------------------모바일 네비 */
+
+.mobile_nav {
+    position: fixed;
+    top: 70px;
+    right: -300px;
+    /* 숨김상태 */
+
+    width: 300px;
+    height: 100vh;
+
+    background: #fff;
+    z-index: 9999;
+
+    transition: 0.4s;
+    overflow-y: auto;
+}
+
+/* 열렸을 때 */
+.mobile_nav.active {
+    right: 0;
+}
+
+.mobile_gnb>li {
+    border-bottom: 1px solid #eee;
+}
+
+.mobile_gnb>li>a {
+    display: block;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.mobile_gnb ul {
+    display: none;
+    background: #f5f5f5;
+    
+}
+
+.mobile_gnb ul li a {
+    display: block;
+    padding: 12px 25px;
+    font-size: 14px;
+}
+
+/* 모바일 네비 열렸을 때 화면 스크롤 막기 */
+body.hidden {
+    overflow: hidden;
+    height: 100%;
+}
+/* -----------------햄버거 메뉴 */
+.hamburger {
+    width: 30px;
+    height: 22px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    display: none;
+    transform: translateY(-50%);
+    cursor: pointer;
+    /* middle_top보다 크게 */
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #333;
+    margin: 4px 0;
+}
+
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-13px) rotate(-45deg);
+}
+
+.hamburger span {
+    transition: 0.3s;
+}
+
+
+@media (max-width:1200px){
+  .top_right{
+    display: none;
+  }
+}
+@media (max-width:1000px){
+  .header_top{
+    display: none;
+
+  }
+  nav{
+    display: none;
+  }
+  .header_middle{
+    height: 80px;
+  }
+  .middle_top{
+    height: 80px;
+  }
+  .hamburger{
+    display: block;
+  }
 }

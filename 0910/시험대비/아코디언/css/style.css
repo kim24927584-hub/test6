@@ -17,6 +17,11 @@ ul > li > a{
   width: 100%;
   display: block;
   padding: 5px 20px;
+  transition: 0.3s;
+}
+.menu > li:hover > a{
+  background-color: rgb(86, 156, 218);
+  color: #fff;
 }
 ul > li > div{
   
@@ -26,5 +31,9 @@ ul > li > div{
 }
 ul > li.on > div{
 height: 120px;
+}
+.menu > li.on > a{
+  background-color: blue;
+  color: #fff;
 }
 ul > li > div > p{padding: 20px;}
