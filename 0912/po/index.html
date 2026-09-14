@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>포트폴리오 | 홈</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+   <a href="#main-content" class="skip-link">메인 콘텐츠로 건너뛰기</a>
+    
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <a href="index.html">포트폴리오</a>
+            </div>
+            <button class="header__toggle" aria-label="메뉴 열기" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="header__nav " id="mainNav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link nav__link--active">홈</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="projects.html" class="nav__link">프로젝트</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="contact.html" class="nav__link">연락처</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- 메인 콘텐츠 -->
+    <div id="main-content">
+       <!-- 히어로 섹션 -->
+        <section class="hero">
+            <div class="hero__container">
+                <div class="hero__content">
+                    <h1 class="hero__title">안녕하세요, 웹 개발자입니다</h1>
+                    <p class="hero__subtitle">창의적이고 사용자 중심의 웹 경험을 만듭니다</p>
+                    <div class="hero__buttons">
+                        <a href="projects.html" class="button button--primary">프로젝트 보기</a>
+                        <a href="contact.html" class="button button--secondary">연락하기</a>
+                    </div>
+                </div>
+                <div class="hero__image">
+                    <div class="hero__placeholder">
+                        <span class="hero__icon">👨‍💻</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+         <!-- 소개 섹션 -->
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section__title">소개</h2>
+                <div class="about__content">
+                    <div class="about__text">
+                        <p>
+                            저는 사용자 경험을 중시하는 웹 개발자입니다. 
+                            깔끔한 코드와 아름다운 디자인으로 웹사이트를 만듭니다.
+                        </p>
+                        <p>
+                            HTML, CSS, JavaScript를 활용하여 반응형 웹사이트를 제작하며,
+                            최신 웹 표준과 접근성을 고려한 개발을 지향합니다.
+                        </p>
+                    </div>
+                    <div class="about__image">
+                        <div class="about__placeholder">
+                            <span>프로필 사진</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+ <!-- 스킬 섹션 -->
+        <section class="skills" id="skills">
+            <div class="container">
+                <h2 class="section__title">스킬</h2>
+                <div class="skills__grid">
+                    <div class="skill-card">
+                        <div class="skill-card__icon">HTML</div>
+                        <h3 class="skill-card__title">HTML5</h3>
+                        <p class="skill-card__description">시맨틱 마크업과 접근성</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card__icon">CSS</div>
+                        <h3 class="skill-card__title">CSS3</h3>
+                        <p class="skill-card__description">Flexbox, Grid, 애니메이션</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card__icon">JS</div>
+                        <h3 class="skill-card__title">JavaScript</h3>
+                        <p class="skill-card__description">ES6+, DOM 조작, 이벤트 처리</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card__icon">📱</div>
+                        <h3 class="skill-card__title">반응형 디자인</h3>
+                        <p class="skill-card__description">모바일 우선 설계</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+           <!-- 프로젝트 미리보기 섹션 -->
+        <section class="projects-preview" id="projects">
+            <div class="container">
+                <h2 class="section__title">프로젝트</h2>
+                <div class="projects-preview__grid">
+                    <article class="project-card">
+                        <div class="project-card__image">
+                            <div class="project-card__placeholder">프로젝트 1</div>
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">포트폴리오 사이트</h3>
+                            <p class="project-card__description">
+                                개인 포트폴리오를 소개하는 반응형 웹사이트입니다.
+                            </p>
+                            <a href="projects.html" class="project-card__link">자세히 보기 →</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-card__image">
+                            <div class="project-card__placeholder">프로젝트 2</div>
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">랜딩 페이지</h3>
+                            <p class="project-card__description">
+                                제품 소개를 위한 랜딩 페이지입니다.
+                            </p>
+                            <a href="projects.html" class="project-card__link">자세히 보기 →</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-card__image">
+                            <div class="project-card__placeholder">프로젝트 3</div>
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">대시보드</h3>
+                            <p class="project-card__description">
+                                데이터를 시각화하는 대시보드입니다.
+                            </p>
+                            <a href="projects.html" class="project-card__link">자세히 보기 →</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="projects-preview__more">
+                    <a href="projects.html" class="button button--primary">모든 프로젝트 보기</a>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+     <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">포트폴리오</h3>
+                    <p class="footer__text">웹 개발자 포트폴리오 사이트</p>
+                </div>
+                <div class="footer__section">
+                    <h3 class="footer__title">빠른 링크</h3>
+                    <ul class="footer__links">
+                        <li><a href="index.html">홈</a></li>
+                        <li><a href="projects.html">프로젝트</a></li>
+                        <li><a href="contact.html">연락처</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h3 class="footer__title">연락처</h3>
+                    <ul class="footer__links">
+                        <li>이메일: example@email.com</li>
+                        <li>전화: 010-1234-5678</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 포트폴리오. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

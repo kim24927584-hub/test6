@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Test3",
+      "request": "launch",
+      "mainClass": "a0914.test.Test3",
+      "projectName": "minsung3_389daf9e"
+    },
+    {
+      "type": "java",
       "name": "Problem4",
       "request": "launch",
       "mainClass": "test.problem4.Problem4",
