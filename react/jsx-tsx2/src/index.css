@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: 'Malgun Gothic', sans-serif;
+  background: #f3f5f4;
+  color: #1a2a24;
+}
+.app {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+h1 span {
+  color: #0f766e;
+}
+h1 small {
+  font-size: 0.7em;
+  color: #888;
+}
+.lead {
+  color: #5a6f68;
+  margin: 8px 0 24px;
+}
+section {
+  margin-bottom: 28px;
+}
+.cols {
+  display: grid;
+  gap: 12px;
+}
+@media (min-width: 700px) {
+  .cols {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.panel {
+  background: #fff;
+  border: 1px solid #d7e3de;
+  border-radius: 12px;
+  padding: 14px;
+}
+.panel h3 {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  color: #0f766e;
+}
+.row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: #0f766e;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn.ghost {
+  background: #e7f0ed;
+  color: #134e4a;
+}
+.btn.on {
+  background: #115e59;
+}
+.list {
+  margin: 0;
+  padding-left: 18px;
+}
+.tag {
+  font-size: 0.75rem;
+  color: #0f766e;
+  margin-left: 6px;
+}
+.input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #c5d5cf;
+  border-radius: 8px;
+}
