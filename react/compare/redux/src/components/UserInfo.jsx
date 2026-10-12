@@ -1,0 +1,62 @@
+import React from 'react'
+import { useState } from 'react'
+import { useDispatch, useSelector } from "react-redux";
+import { updateName, updateAge } from "../store/userSlice";
+
+function UserInfo() {
+    const user = useSelector((state) => state.user); //user 읽어오기
+    const dispatch = useDispatch(); 
+    //state 변경 -> redux에서 액션 실행 요청하는 함수
+    const [nameInput, setNameInput] = useState('');
+    const [ageInput, setAgeInput] = useState("");
+
+    const handleNameSubmit = (e) =>{
+        e.preventDefault();
+        if(nameInput.trim()){
+            dispatch(updateName(nameInput)); 
+            setNameInput('');
+        }
+    }
+  
+    const handleAgeSubmit = (e) => {
+    e.preventDefault();
+    if (ageInput && !isNaN(ageInput)) {
+      //not a number
+      dispatch(updateAge(parseInt(ageInput)));
+      //parseInt(10.5px) -> 10
+      setAgeInput("");
+    }
+  };
+
+  return (
+    <div className="user-info">
+        <div className="user-display">
+            <p>
+                <strong>이름: </strong> {user.name}
+            </p>
+            <p>
+                <strong>나이: </strong> {user.age}
+            </p>
+        </div>
+        <form onSubmit = {handleNameSubmit} className='form'>
+            <input type="text" 
+                value={nameInput} 
+                onChange={(e) => setNameInput(e.target.value)} 
+                placeholder='새이름 입력'
+            />
+            <button type='submit'>이름 버튼</button>
+        </form>
+       <form onSubmit={handleAgeSubmit} className="form">
+            <input
+            type="number"
+            value={ageInput}
+            onChange={(e) => setAgeInput(e.target.value)}
+            placeholder="새 나이 입력"
+            />
+            <button type="submit">나이 변경</button>
+      </form>
+    </div>
+  )
+}
+
+export default UserInfo
