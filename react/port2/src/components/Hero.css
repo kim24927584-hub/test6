@@ -142,3 +142,13 @@
 
 
 
+.hero-social {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.hero-social a {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
