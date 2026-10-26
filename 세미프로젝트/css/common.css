@@ -1,0 +1,15 @@
+*{
+  box-sizing: border-box;
+  margin: 0;padding: 0;
+}
+.container{
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+img{
+  /* 이미지 크기가 부모 크기를 넘지 못하게 하고 
+  높이는 넓이 비례를 따라감 */
+  max-width: 100%;
+  height: auto;
+}
