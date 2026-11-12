@@ -22,7 +22,7 @@ function CardForm({onSubmit, onCancel, placeholder}) {
         }}
         />
         <div className="card-form-action">
-            <button type='submit' className='btn-save' disabled={!text.trim}>
+            <button type='submit' className='btn-save' disabled={!text.trim()}>
                 추가
             </button>
              <button type='button' className='btn-cancel' onClick={onCancel}>

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Card from './Card'
 import CardForm from './CardForm';
 
-function Column({column, cards, onAddCard}) {
+function Column({column, cards, onDragStart,onDragEnd,isDragging}) {
   const [isAdding, setIsAdding] = useState(false);
   const handleAdd = (text) =>{
     onAddCard(column.id, text);
@@ -14,11 +14,13 @@ function Column({column, cards, onAddCard}) {
             <h2 className='column-title'>{column.title}</h2>
             <span className='column-count'>{cards.length}</span>
         </div>
-        <div className='column-cards'>
+        <div className={`column-cards ${isDragging?'dragging':''}`}>
           {cards.map((card)=>(
             <Card
               key={card.id}
               card={card}
+              onDragStart={onDragStart}
+              onDragEnd={onDragEnd}
             />
           ))}
             

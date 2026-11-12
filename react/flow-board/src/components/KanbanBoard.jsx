@@ -44,16 +44,16 @@ function KanbanBoard({columns, cards, onAddCard, onMoveCard}) {
     {columns.map((column)=>(
         <div key={column.id} 
         className={`column-wrapper ${dragOverColumn === column.id ? 'drag-over':''}`}
-        onDragOver={(e)=>handleDragOver(e.column.id)}
+        onDragOver={(e)=>handleDragOver(e, column.id)}
         onDragLeave={handleDragLeave}
-        onDrop={(e)=>handleDrop(e.column.id)}>
+        onDrop={(e)=>handleDrop(e, column.id)}>
             <Column 
                 column={column}
                 cards={cards.filter((c) =>c.columnId === column.id)}
                 onAddCard={onAddCard}
                 onDragStart={handleDragStart}
                 onDragEnd={handleDragEnd}
-                isDragging={draggedCard?.columnId == column.id}
+                isDragging={draggedCard?.columnId === column.id}
             />
 
         </div>

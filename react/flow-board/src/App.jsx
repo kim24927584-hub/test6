@@ -29,7 +29,7 @@ function App() {
       id:crypto.randomUUID(),
       text: text.trim(),
       columnId,
-      createAt:Date.now(),
+      createdAt:Date.now(),
     }
     setCards(prev=>[...prev, newCard])
   }
