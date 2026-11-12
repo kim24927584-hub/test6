@@ -17,6 +17,7 @@ const INITIAL_CARDS = [
 
 
 
+
 function App() {
 
   const [columns] = useState(INITIAL_COLUMNS);
@@ -32,6 +33,14 @@ function App() {
     }
     setCards(prev=>[...prev, newCard])
   }
+
+  const moveCard = (cardId, targetColumnId)=>{
+    setCards(prev=>
+      prev.map(card=>(
+        card.id === cardId ? {...card, columnId: targetColumnId}: card
+      ))
+    )
+  }
   return (
     <div className='app'>
         <header className="header">
@@ -42,6 +51,7 @@ function App() {
           columns={columns}
           cards={cards}
           onAddCard={addCard}
+          onMoveCard={moveCard}
         />
     </div>
   )
