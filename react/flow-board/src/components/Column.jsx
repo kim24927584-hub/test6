@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Card from './Card'
 import CardForm from './CardForm';
 
-function Column({column, cards, onDragStart,onDragEnd,isDragging}) {
+function Column({column, cards, onAddCard, onDragStart,onDragEnd,isDragging}) {
   const [isAdding, setIsAdding] = useState(false);
   const handleAdd = (text) =>{
     onAddCard(column.id, text);
