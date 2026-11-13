@@ -41,6 +41,15 @@ function App() {
       ))
     )
   }
+
+  const deleteCard = (cardId)=>{
+    setCards(prev=>prev.filter(card=>card.id !== cardId));
+  }
+  const updateCard = (cardId, newText)=>{
+    setCards(prev=>prev.map(card=>
+      card.id === cardId ? {...card, text:newText} : card
+    ))
+  }
   return (
     <div className='app'>
         <header className="header">
@@ -52,6 +61,8 @@ function App() {
           cards={cards}
           onAddCard={addCard}
           onMoveCard={moveCard}
+          onDeleteCard={deleteCard}
+          onUpdateCard={updateCard}
         />
     </div>
   )

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Column from './Column'
 
-function KanbanBoard({columns, cards, onAddCard, onMoveCard}) {
+function KanbanBoard({columns, cards, onAddCard, onMoveCard,  onDeleteCard, onUpdateCard}) {
   const [draggedCard, setDraggedCard] = useState(null);
   const [dragOverColumn, setDragOverColumn] = useState(null);
   
@@ -54,6 +54,8 @@ function KanbanBoard({columns, cards, onAddCard, onMoveCard}) {
                 onDragStart={handleDragStart}
                 onDragEnd={handleDragEnd}
                 isDragging={draggedCard?.columnId === column.id}
+                onDeleteCard={onDeleteCard}
+                onUpdateCard={onUpdateCard}
             />
 
         </div>

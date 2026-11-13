@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Card from './Card'
 import CardForm from './CardForm';
 
-function Column({column, cards, onAddCard, onDragStart,onDragEnd,isDragging}) {
+function Column({column, cards, onAddCard, onDragStart,onDragEnd,isDragging,onDeleteCard, onUpdateCard}) {
   const [isAdding, setIsAdding] = useState(false);
   const handleAdd = (text) =>{
     onAddCard(column.id, text);
@@ -21,15 +21,16 @@ function Column({column, cards, onAddCard, onDragStart,onDragEnd,isDragging}) {
               card={card}
               onDragStart={onDragStart}
               onDragEnd={onDragEnd}
+              onDelete={onDeleteCard}
+              onUpdate={onUpdateCard}
             />
           ))}
-            
         </div>
         {isAdding ? (
           <CardForm
             onSubmit={handleAdd}
             onCancel={()=>setIsAdding(false)}
-            placeholder="작업내용을입력하세요"          
+            placeholder="작업내용을입력하세요"
           />
         ):(
           <button className='add-btn'
@@ -38,7 +39,6 @@ function Column({column, cards, onAddCard, onDragStart,onDragEnd,isDragging}) {
           +카드추가
         </button>
         )}
-        
     </section>
   )
 }
